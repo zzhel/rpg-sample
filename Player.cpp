@@ -7,7 +7,7 @@ void Player::GrantXP(uint8_t pXP)
     uint8_t lNewXp = mXP + pXP;
     uint8_t lNextLvlXp = GetAttack() + GetDefense();
 
-    printf_s("Gained %u XP.\r\n", pXP);
+    printf_s("Gained %u XP. ", pXP);
 
     while (lNewXp >= lNextLvlXp)
     {
@@ -17,7 +17,7 @@ void Player::GrantXP(uint8_t pXP)
     }
 
     mXP += lNewXp;
-    printf_s("Experience: %d Level: %d\r\n", mXP, mLevel);
+    printf_s("Total experience: %d Level: %d\r\n", mXP, mLevel);
 }
 
 void Player::ModHealth(int16_t pMod)
@@ -153,7 +153,7 @@ bool Fight::Strike(Unit* pAttacker, Unit* pVictim)
 
 void Fight::Begin()
 {
-    printf("\r\nYou have stumbled upon a %s!", mCre->GetName().c_str());
+    printf("\r\nYou have stumbled upon a %s!\r\n", mCre->GetName().c_str());
     printf("Stats brief:\r\n");
     mCre->PrintStats(false);
     printf("Let the fight commence!\r\n");
