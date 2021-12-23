@@ -38,6 +38,12 @@ public:
         mUnits.erase(lIter);
     }
 
+    void Cleanup()
+    {
+        for (auto lIter : mUnits)
+            delete lIter;
+    }
+
     Creature* GetRandomCreature()
     {
         if (mUnits.empty())

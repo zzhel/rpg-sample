@@ -52,6 +52,7 @@ bool Player::NextRound()
             {
                 Fight* lFight = new Fight(this, lCre);
                 lFight->Begin();
+                delete lFight;
             }
         }
     }
@@ -65,6 +66,7 @@ bool Player::NextRound()
             {
                 Fight* lFight = new Fight(this, lCre);
                 lFight->Begin();
+                delete lFight;
             }
             else
             {

@@ -31,8 +31,8 @@ int main()
 
     printf_s("\r\nInitialized player: \r\n");
     lPlayer->PrintStats();
-
-    lPlayer->GrantXP(20);
-    lPlayer->GrantXP(200);
     lPlayer->BeginGame();
+
+    sCreatureMgr->Cleanup();
+    delete lPlayer;
 }
